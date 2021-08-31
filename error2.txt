@@ -1,0 +1,5 @@
+Dong 1: Ma thanh vien khong ton tai trong database
+Dong 2: Ma thanh vien khong ton tai trong database
+Dong 2: Level khong phai la VIP hoac NOR
+Dong 3: Diem thuong vuot qua 500
+Dong 6: Diem thuong khong phai la so nguyen duong
