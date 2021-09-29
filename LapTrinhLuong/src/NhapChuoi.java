@@ -29,6 +29,16 @@ public class NhapChuoi {
 		return temp;
 	}
 	
+	public static int DemTu(String s) {
+		int count = 0;
+		for (int i = 0; i < s.length(); i++) {
+			if (s.charAt(i) == ' ') {
+				count++;
+			}
+		}
+		return count + 1;
+	}
+	
 	public static void main(String args[]) {
 		NhapChuoi dt = new NhapChuoi();
 		String s = "";
