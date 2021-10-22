@@ -9,7 +9,7 @@ public class Bai2_C {
 		DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
 		Scanner kb = new Scanner(System.in);
 		while (true) {
-			System.out.println("Client: ");
+			System.out.print("Client: ");
 			String msg = kb.nextLine();
 			dos.writeUTF("Client: " + msg);
 			dos.flush();
