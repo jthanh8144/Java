@@ -8,8 +8,8 @@ public class Bai3_S {
 		Scanner kb = new Scanner(System.in);
 		DatagramSocket serverSocket = new DatagramSocket(9876);
 		System.out.println("Server is started");
-		byte[] receiveData = new byte[1024];
-		byte[] sendData = new byte[1024];
+		byte[] receiveData = new byte[10000];
+		byte[] sendData = new byte[10000];
 		while (true) {
 			DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
 			serverSocket.receive(receivePacket);

@@ -60,7 +60,6 @@ public class Bai2_S {
 		return count;
 	}
 
-
 	public static void main(String[] args) throws Exception {
 		DatagramSocket serverSocket = new DatagramSocket(9876);
 		System.out.println("Server is started");
