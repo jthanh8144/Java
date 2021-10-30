@@ -1,3 +1,5 @@
+package UDP;
+
 import java.awt.EventQueue;
 import java.awt.event.*;
 import java.net.*;
@@ -35,21 +37,22 @@ public class Bai2_UDP_C extends JFrame implements ActionListener {
 			try {
 				byte[] sendData = new byte[1024];
 				byte[] receiveData = new byte[10000];
+				textArea.append("Phép tính: " + txtString.getText() + "\n");
 				sendData = txtString.getText().getBytes();
 				DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IP, Integer.parseInt(txtPort.getText()));
 				clientSocket.send(sendPacket);
 				DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
 				clientSocket.receive(receivePacket);
 				String str = new String(receivePacket.getData());
-				textArea.setText(str);
-				clientSocket.close();
+				textArea.append(str + "\n");
 			} catch (Exception ex) {
-				System.out.println("Error");
+				textArea.append("Error\n");
 			}
 		}
 	}
 	
 	public Bai2_UDP_C() {
+		setResizable(false);
 		setTitle("Client tính UDP");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 516, 303);
@@ -79,8 +82,7 @@ public class Bai2_UDP_C extends JFrame implements ActionListener {
 		
 		btnSend.setBounds(332, 63, 77, 21);
 		contentPane.add(btnSend);
-		
-		textArea.setEnabled(false);
+		textArea.setEditable(false);
 		textArea.setBounds(0, 100, 504, 166);
 		contentPane.add(textArea);
 		btnSend.addActionListener(this);

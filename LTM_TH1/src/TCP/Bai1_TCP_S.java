@@ -1,9 +1,7 @@
-import java.awt.EventQueue;
-import java.awt.event.*;
+package TCP;
+
 import java.io.*;
 import java.net.*;
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 
 class Bai1_TCP_ThreadSocket extends Thread {
 	Socket socket = null;
@@ -17,11 +15,11 @@ class Bai1_TCP_ThreadSocket extends Thread {
 			while (true) {
 				String st = din.readUTF();
 				dos.writeUTF("Chuoi hoa: " + ChuoiHoa(st) + "\nChuoi thuong: " + ChuoiThuong(st) + "\nChuoi HT: " + ChuoiHT(st) 
-						+ "\nChuoi co " + DemTu(st) + " tu\nChuoi co " + DemNguyenAm(st) + " nguyen am");
+						+ "\nChuoi co " + DemTu(st) + " tu\nChuoi co " + DemNguyenAm(st) + " nguyen am\n\n");
 				dos.flush();
 			}
 		} catch (Exception ex) {
-			
+			System.out.println("Error");
 		}
 	}
 	
@@ -84,69 +82,12 @@ class Bai1_TCP_ThreadSocket extends Thread {
 	
 }
 
-public class Bai1_TCP_S extends JFrame implements ActionListener {
-	private static final long serialVersionUID = 1L;
-	JPanel contentPane;
-	JTextField txtPort;
-	JButton btnRun = new JButton("Run");
-	static JTextArea textArea = new JTextArea();
-	
-	ServerSocket server;
-	
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == btnRun) {
-			try {
-				server = new ServerSocket(Integer.parseInt(txtPort.getText()));
-				textArea.setText("Khởi chạy server thành công!");
-				while (true) {
-					new Bai1_TCP_ThreadSocket(server.accept()).start();
-				}
-			} catch (Exception ex) {
-				System.out.println("Error");
-			}
+public class Bai1_TCP_S {
+	public static void main(String[] args) throws Exception {
+		ServerSocket server = new ServerSocket(9999);
+		System.out.println("Khởi chạy server thành công!");
+		while (true) {
+			new Bai1_TCP_ThreadSocket(server.accept()).start();
 		}
 	}
-
-	public static void main(String[] args) throws Exception {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Bai1_TCP_S frame = new Bai1_TCP_S();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		
-	}
-
-	public Bai1_TCP_S() {
-		setTitle("Server chu\u1ED7i TCP");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 463, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("Nh\u1EADp s\u1ED1 hi\u1EC7u c\u1ED5ng");
-		lblNewLabel.setBounds(41, 22, 115, 13);
-		contentPane.add(lblNewLabel);
-		
-		txtPort = new JTextField();
-		txtPort.setBounds(194, 19, 96, 19);
-		contentPane.add(txtPort);
-		txtPort.setColumns(10);
-		
-		btnRun.setBounds(300, 18, 85, 21);
-		contentPane.add(btnRun);
-		
-		textArea.setEnabled(false);
-		textArea.setBounds(0, 48, 449, 215);
-		contentPane.add(textArea);
-		
-		btnRun.addActionListener(this);
-	}
-
 }

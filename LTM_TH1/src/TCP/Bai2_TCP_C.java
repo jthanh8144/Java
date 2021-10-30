@@ -1,3 +1,5 @@
+package TCP;
+
 import java.awt.EventQueue;
 import java.awt.event.*;
 import java.io.*;
@@ -47,17 +49,18 @@ public class Bai2_TCP_C extends JFrame implements ActionListener {
 				DataInputStream din = new DataInputStream(socket.getInputStream());
 				DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
 				String st = txtString.getText();
+				textArea.append("Phép tính: " + st + "\n");
 				dos.writeUTF(st);
 				dos.flush();
 				st = din.readUTF();
-				textArea.setText(textArea.getText() + st);
+				textArea.append(st + "\n");
 			} catch (Exception ex) {
 				System.out.println("Error");
 			}
 		}
 		if (e.getSource() == btnClose) {
 			try {
-				textArea.setText("Đã ngắt kết nối!\n");
+				textArea.append("Đã ngắt kết nối!\n");
 				socket.close();
 			} catch (Exception ex) {
 				
@@ -66,6 +69,7 @@ public class Bai2_TCP_C extends JFrame implements ActionListener {
 	}
 	
 	public Bai2_TCP_C() {
+		setResizable(false);
 		setTitle("Client tính TCP");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 516, 303);
@@ -98,8 +102,7 @@ public class Bai2_TCP_C extends JFrame implements ActionListener {
 		
 		btnSend.setBounds(307, 63, 77, 21);
 		contentPane.add(btnSend);
-		
-		textArea.setEnabled(false);
+		textArea.setEditable(false);
 		textArea.setBounds(0, 100, 504, 166);
 		contentPane.add(textArea);
 		

@@ -1,3 +1,5 @@
+package TCP;
+
 import java.awt.EventQueue;
 import java.awt.event.*;
 import java.io.*;
@@ -418,6 +420,7 @@ public class Bai2_TCP_S extends JFrame implements ActionListener {
 	}
 
 	public Bai2_TCP_S() {
+		setResizable(false);
 		setTitle("Server tính TCP");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 463, 300);
@@ -437,8 +440,7 @@ public class Bai2_TCP_S extends JFrame implements ActionListener {
 		
 		btnRun.setBounds(300, 18, 85, 21);
 		contentPane.add(btnRun);
-		
-		textArea.setEnabled(false);
+		textArea.setEditable(false);
 		textArea.setBounds(0, 48, 449, 215);
 		contentPane.add(textArea);
 		

@@ -129,7 +129,7 @@ class ChatClientThread extends Thread {
     }
 }
 
-public class Bai3_TCP_C {
+public class ChatTCP_C {
 	static class ChatAccess extends Observable {
         private Socket socket;
         private OutputStream outputStream;
@@ -252,7 +252,7 @@ public class Bai3_TCP_C {
         ChatAccess access = new ChatAccess();
 
         JFrame frame = new ChatFrame(access);
-        frame.setTitle("MyChatApp - connected to " + server + ":" + port);
+        frame.setTitle("Chat client TCP - connected to " + server + ":" + port);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setLocationRelativeTo(null);

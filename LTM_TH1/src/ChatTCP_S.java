@@ -1,7 +1,7 @@
 import java.io.*;
 import java.net.*;
 
-public class Bai3_TCP_S {
+public class ChatTCP_S {
     private static ServerSocket serverSocket = null;
     private static Socket clientSocket = null;
 
