@@ -1,0 +1,25 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+}
+body {
+	background-color: #81ecec;
+}
+.list {
+	height: 1000px;
+}
+.item {
+	padding: 10px 15px;
+}
+.link {
+	display: block;
+	color: #636e72;
+}
+.item:hover {
+	background-color: #00cec9;
+	cursor: pointer;
+}

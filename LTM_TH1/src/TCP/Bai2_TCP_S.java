@@ -24,7 +24,7 @@ class Bai2_TCP_ThreadSocket extends Thread {
 			dos.writeUTF("Kết quả: " + c.valueMath(st));
 			dos.flush();
 		} catch (Exception ex) {
-			
+			System.out.print("err");
 		}
 	}
 	
