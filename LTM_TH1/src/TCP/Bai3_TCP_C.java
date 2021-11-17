@@ -112,7 +112,7 @@ public class Bai3_TCP_C extends JFrame implements ActionListener {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		btnSend = new JButton("New button");
+		btnSend = new JButton("Gửi");
 		btnSend.setBounds(351, 372, 85, 27);
 		contentPane.add(btnSend);
 		

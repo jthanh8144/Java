@@ -20,7 +20,10 @@
             <a href="Search.jsp" class="link">Tìm kiếm</a>
          </li>
          <%
-         if (request.getAttribute("isAdmin") != null) {
+         if (request.getAttribute("isAdmin") != null || session.getAttribute("isLogin") != null) {
+        	 if (session.getAttribute("isLogin") != null) {
+        		 session.removeAttribute("isLogin");
+        	 }
          %>
          <li class="item">
             <a href="UIFormNVServlet?mode=add" class="link">Thêm nhân viên</a>
@@ -40,9 +43,10 @@
          <li class="item">
             <a href="XemPBServlet?mode=edit" class="link">Cập nhập thông tin phòng ban</a>
          </li>
-         <%
-         }
-         %>
+         <li class="item">
+            <a href="index.jsp" class="link">Đăng xuất</a>
+         </li>
+         <% } %>
       </ul>
    </body>
 </html>

@@ -18,7 +18,6 @@
 		String url = "jdbc:mysql://127.0.0.1:3306/dulieu";
 		Connection con = (Connection) DriverManager.getConnection(url, "root", "");
 		Statement stmt = (Statement) con.createStatement();
-		PreparedStatement ps;
 		String sql = "SELECT * FROM admin where username = '" + username + "' and pass = '" + password + "'";
 		ResultSet rs = stmt.executeQuery(sql);
 		

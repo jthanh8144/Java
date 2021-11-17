@@ -6,6 +6,7 @@ import java.util.Date;
 public class Bai1_S {
 
 	public static void main(String[] args) throws Exception {
+		@SuppressWarnings("resource")
 		DatagramSocket serverSocket = new DatagramSocket(9876);
 		System.out.println("Server is started");
 		byte[] receiveData = new byte[1024];

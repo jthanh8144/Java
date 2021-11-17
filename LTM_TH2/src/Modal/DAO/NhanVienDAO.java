@@ -78,7 +78,7 @@ public class NhanVienDAO {
 			String url = "jdbc:mysql://127.0.0.1:3306/dulieu";
 			Connection con = (Connection) DriverManager.getConnection(url, "root", "");
 			Statement stmt = (Statement) con.createStatement();
-			String sql = "SELECT * FROM nhanvien where " + select + " = '" + inp + "'";
+			String sql = "SELECT * FROM nhanvien where " + select + " LIKE N'%" + inp + "%'";
 			ResultSet rs = stmt.executeQuery(sql);
 			
 			while (rs.next()) {

@@ -11,7 +11,8 @@
 <link rel="stylesheet" type="text/css" href="./css/styles1.css">
 </head>
 <body>
-	<a href="index.jsp" class="back">Trang chủ</a>
+	<% session.setAttribute("isLogin", true); %>
+	<a href="home.jsp" class="back">Trang chủ</a>
 	<div class="main">
 		<% if (((String) request.getParameter("mode")).equals("add") == true ) { %>
 		<form action="ThemNVServlet" method="POST" class="form" id="form">

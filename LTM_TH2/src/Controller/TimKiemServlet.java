@@ -17,6 +17,8 @@ private static final long serialVersionUID = 1L;
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("utf-8");
 		String destination = null;
 		String select = request.getParameter("select");
 		String inp = request.getParameter("inp");
