@@ -84,6 +84,7 @@ class Bai1_TCP_ThreadSocket extends Thread {
 
 public class Bai1_TCP_S {
 	public static void main(String[] args) throws Exception {
+		@SuppressWarnings("resource")
 		ServerSocket server = new ServerSocket(9999);
 		System.out.println("Khởi chạy server thành công!");
 		while (true) {

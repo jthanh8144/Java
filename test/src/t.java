@@ -1,20 +1,23 @@
 
 public class t {
-	public static boolean Check(String s) {
+	public static int CheckFibo(String s) {
 		int n = Integer.parseInt(s);
-		int f1 = 1, f2 = 2, f = 0;
+		if (n == 1) return 1;
+		int index = 2;
+		int f1 = 1, f2 = 1, f = 0;
 		do {
 			f = f1 + f2;
 			f1 = f2;
 			f2 = f;
+			index++;
 		} while (f < n);
 		if (n != f) {
-			return false;
+			return -1;
 		} else {
-			return true;
+			return index;
 		}
 	}
 	public static void main(String args[]) {
-		System.out.print(Check("5"));
+		System.out.print(CheckFibo("8"));
 	}
 }

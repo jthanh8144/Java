@@ -9,7 +9,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.text.DefaultCaret;
 
 public class Client extends JFrame {
-
+	private static final long serialVersionUID = 1L;
+	
 	private JPanel contentPane;
 	private static JTextArea textArea = new JTextArea();
 
