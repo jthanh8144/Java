@@ -1,23 +1,29 @@
 
 public class t {
-	public static int CheckFibo(String s) {
-		int n = Integer.parseInt(s);
-		if (n == 1) return 1;
-		int index = 2;
-		int f1 = 1, f2 = 1, f = 0;
-		do {
-			f = f1 + f2;
-			f1 = f2;
-			f2 = f;
-			index++;
-		} while (f < n);
-		if (n != f) {
-			return -1;
-		} else {
-			return index;
+	public static String calculate(String st) {
+		String[] items = st.split("\\s");
+		double A = Double.parseDouble(items[0]);
+		double B = Double.parseDouble(items[2]);
+		double result = 0;
+		switch (items[1]) {
+		case "+":
+			result = A + B;
+			break;
+		case "-":
+			result = A - B;
+			break;
+		case "*":
+			result = A * B;
+			break;
+		case "/":
+			result = A / B;
+			break;
+		default:
+			return "error";
 		}
+		return Double.toString(result);
 	}
 	public static void main(String args[]) {
-		System.out.print(CheckFibo("8"));
+		System.out.print(calculate("8 + 3"));
 	}
 }

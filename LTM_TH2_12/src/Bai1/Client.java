@@ -11,10 +11,8 @@ public class Client extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPane;
-	private JTextField txtA;
-	private JTextField txtB;
+	private JTextField txt;
 	private JTextField txtKq;
-	private JComboBox<String> comboBox;
 	private JButton btnEqual;
 	
 	static Socket socket;
@@ -44,19 +42,15 @@ public class Client extends JFrame implements ActionListener {
 			try {
 				DataInputStream din = new DataInputStream(socket.getInputStream());
 				DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
-				String a = txtA.getText();
-				String b = txtB.getText();
-				String o = (String) comboBox.getSelectedItem();
-				dos.writeUTF(a);
+				String st = txt.getText();
+				dos.writeUTF(st);
 				dos.flush();
-				dos.writeUTF(b);
-				dos.flush();
-				dos.writeUTF(o);
 				dos.flush();
 				String result = din.readUTF();
 				txtKq.setText(result);
+				socket.close();
 			} catch (Exception ex) {
-				System.out.println("Error");
+				System.out.println("error");
 			}
 		}
 	}
@@ -70,28 +64,14 @@ public class Client extends JFrame implements ActionListener {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		txtA = new JTextField();
-		txtA.setBounds(41, 33, 74, 19);
-		contentPane.add(txtA);
-		txtA.setColumns(10);
+		txt = new JTextField();
+		txt.setBounds(144, 33, 172, 19);
+		contentPane.add(txt);
+		txt.setColumns(10);
 		
-		txtB = new JTextField();
-		txtB.setColumns(10);
-		txtB.setBounds(223, 33, 74, 19);
-		contentPane.add(txtB);
-		
-		comboBox = new JComboBox<String>();
-		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"+", "-", "*", "/"}));
-		comboBox.setBounds(144, 32, 47, 21);
-		contentPane.add(comboBox);
-		
-		JLabel lblNewLabel = new JLabel("a");
-		lblNewLabel.setBounds(72, 10, 20, 13);
+		JLabel lblNewLabel = new JLabel("Nhập biểu thức");
+		lblNewLabel.setBounds(41, 36, 117, 13);
 		contentPane.add(lblNewLabel);
-		
-		JLabel lblB = new JLabel("b");
-		lblB.setBounds(256, 10, 20, 13);
-		contentPane.add(lblB);
 		
 		txtKq = new JTextField();
 		txtKq.setBounds(96, 83, 295, 19);

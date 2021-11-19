@@ -13,13 +13,12 @@ public class TryAgain extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+		String destination = "/tryagain.jsp";
+		RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
+		rd.forward(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("error", true);
-		String destination = "/login.jsp";
-		RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
-		rd.forward(request, response);
+		
 	}
 }

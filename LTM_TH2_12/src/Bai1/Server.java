@@ -15,21 +15,20 @@ class ThreadSocket extends Thread {
 			DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
 			DataInputStream din = new DataInputStream(socket.getInputStream());
 			while (true) {
-				String a = din.readUTF();
-				String b = din.readUTF();
-				String o = din.readUTF();
-				dos.writeUTF(calculate(a, b, o));
+				String st = din.readUTF();
+				dos.writeUTF(calculate(st));
 				dos.flush();
 			}
 		} catch (Exception ex) {
-			System.out.println("Error");
+			System.out.println("Ngắt kết nối");
 		}
 	}
-	public static String calculate(String a, String b, String o) {
-		double A = Double.parseDouble(a);
-		double B = Double.parseDouble(b);
+	public static String calculate(String st) {
+		String[] items = st.split("\\s");
+		double A = Double.parseDouble(items[0]);
+		double B = Double.parseDouble(items[2]);
 		double result = 0;
-		switch (o) {
+		switch (items[1]) {
 		case "+":
 			result = A + B;
 			break;
@@ -42,6 +41,8 @@ class ThreadSocket extends Thread {
 		case "/":
 			result = A / B;
 			break;
+		default:
+			return "error";
 		}
 		return Double.toString(result);
 	}

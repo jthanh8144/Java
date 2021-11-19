@@ -30,13 +30,6 @@
             <input class="btn" type="Submit" value="Đăng nhập">
             <input class="btn" type="Reset" value="Reset">
         </form>
-        <%
-	    if (request.getAttribute("error") != null) {
-	    	%>
-	    <h4>Sai tài khoản hoặc mật khẩu</h4>
-	    <% }
-	    %>
-	    <a href="register.jsp" class="link">Đăng kí tài khoản</a>
     </div>
     
     
