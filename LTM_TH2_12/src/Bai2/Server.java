@@ -2,11 +2,10 @@ package Bai2;
 
 import java.net.*;
 
-
 public class Server {
 	public static boolean Check(String s) {
 		int n = Integer.parseInt(s);
-		int f1 = 1, f2 = 2, f = 0;
+		/* int f1 = 1, f2 = 2, f = 0;
 		do {
 			f = f1 + f2;
 			f1 = f2;
@@ -16,7 +15,11 @@ public class Server {
 			return false;
 		} else {
 			return true;
+		} */
+		if (Math.sqrt(5*n*n + 4) == (int) Math.sqrt(5*n*n + 4) || Math.sqrt(5*n*n - 4) == (int) Math.sqrt(5*n*n - 4)) {
+			return true;
 		}
+		return false;
 	}
 	public static void main(String[] args) throws Exception {
 		@SuppressWarnings("resource")
