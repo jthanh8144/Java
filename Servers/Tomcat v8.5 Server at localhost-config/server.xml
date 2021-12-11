@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="LTM_JSPSample" path="/LTM_JSPSample" reloadable="true" source="org.eclipse.jst.jee.server:LTM_JSPSample"/><Context docBase="LTM_MVCSample" path="/LTM_MVCSample" reloadable="true" source="org.eclipse.jst.jee.server:LTM_MVCSample"/><Context docBase="LTM_TH2" path="/LTM_TH2" reloadable="true" source="org.eclipse.jst.jee.server:LTM_TH2"/><Context docBase="LTM_TH2_3" path="/LTM_TH2_3" reloadable="true" source="org.eclipse.jst.jee.server:LTM_TH2_3"/><Context docBase="LTM_CK_3" path="/LTM_CK_3" reloadable="true" source="org.eclipse.jst.jee.server:LTM_CK_3"/></Host>
+      <Context docBase="LTM_JSPSample" path="/LTM_JSPSample" reloadable="true" source="org.eclipse.jst.jee.server:LTM_JSPSample"/><Context docBase="LTM_MVCSample" path="/LTM_MVCSample" reloadable="true" source="org.eclipse.jst.jee.server:LTM_MVCSample"/><Context docBase="LTM_TH2" path="/LTM_TH2" reloadable="true" source="org.eclipse.jst.jee.server:LTM_TH2"/><Context docBase="LTM_TH2_3" path="/LTM_TH2_3" reloadable="true" source="org.eclipse.jst.jee.server:LTM_TH2_3"/><Context docBase="LTM_CK_3" path="/LTM_CK_3" reloadable="true" source="org.eclipse.jst.jee.server:LTM_CK_3"/><Context docBase="CNW_CK" path="/CNW_CK" reloadable="true" source="org.eclipse.jst.jee.server:CNW_CK"/></Host>
     </Engine>
   </Service>
 </Server>
