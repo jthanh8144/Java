@@ -380,6 +380,7 @@ class Bai2_TCP_ThreadSocket extends Thread {
 			return ans;
 		}
 	}
+
 }
 
 public class Bai2_TCP_S extends JFrame implements ActionListener {

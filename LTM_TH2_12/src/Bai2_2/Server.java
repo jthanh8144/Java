@@ -28,7 +28,7 @@ class ThreadSocket extends Thread {
 			}
 			
 		} catch (Exception ex) {
-			
+			System.out.print("error");
 		}
 	}
 	
